@@ -1,0 +1,35 @@
+{
+  "name": "nodeintypescript",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "@types/node": "^11.9.3",
+    "express": "^4.16.4",
+    "ts-node": "^8.0.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "watch": "nodemon --watch 'src/**/*.ts' --exec 'ts-node' src/index.ts",
+    "start": "npm run build:live",
+    "build": "tsc -p .",
+    "build:live": "nodemon --watch 'src/**/*.ts' --exec 'ts-node' src/index.ts",
+    "build-ts": "tsc",
+    "startOld": "npm run serve",
+    "serveOld": "node dist/index.js",
+    "watch-nodeOld": "nodemon dist/index.js",
+    "watch-tsOld": "tsc -w",
+    "proxyOld": "node ./proxy.js",
+    "sOld": "concurrently -k 'yarn run proxy' 'yarn run watch-ts'  'yarn run watch-node'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rajeshkhetarpal/nodeintypescript.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rajeshkhetarpal/nodeintypescript/issues"
+  },
+  "homepage": "https://github.com/rajeshkhetarpal/nodeintypescript#readme"
+}
